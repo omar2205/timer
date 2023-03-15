@@ -4,17 +4,21 @@
 
   let counter: string = 'counting...'
   let timer: CountdownTimer
+  let box = false
 
   onMount(() => {
-    const now = new Date().toISOString().split('T')
+    const now = new Date()
     const url = new URL(location as unknown as string)
     const {
-      date = now[0],
+      date = now.toLocaleDateString(),
       time = '',
       bg = 'eee',
       fg = '111',
       font = 'helvetica',
+      addbox = 0,
     } = Object.fromEntries(url.searchParams)
+
+    box = addbox === '1'
 
     const root = document.documentElement
     root.style.setProperty('--bg-color', `#${bg}`)
@@ -67,7 +71,7 @@
         .map(([unit, label]) => `${formatUnit(unit)} ${label}`)
         .join(' : ')
 
-      if (timeLeft < 0) formattedTime = '- ' + formattedTime
+      if (timeLeft < 0) formattedTime = '+ ' + formattedTime
       counter = formattedTime
     })
     timer.start()
@@ -78,11 +82,18 @@
   })
 </script>
 
-<h1>{counter}</h1>
+<h1 class:box>{counter}</h1>
 
 <style>
   h1 {
     width: fit-content;
     margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+
+  h1.box {
+    background-color: rgb(18 18 18 / 20%);
+    background-color: var(--bg-color);
   }
 </style>

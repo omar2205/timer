@@ -10,13 +10,14 @@ To use the countdown timer, you need to add the following URL as an overlay sour
 
 The options are:
 
-| Option | Description                                                | Example     | Default             |
-| ------ | ---------------------------------------------------------- | ----------- | ------------------- |
-| date?  | The date of the event in YYYY-MMM-DD format.               | 2023-Mar-15 | None (optional)     |
-| time   | The time of the event in HH:MM format (24-hour clock).     | 22:30       | Starts 5 mins timer |
-| bg     | The background color of the timer in hex code (without #). | eee         | eee                 |
-| fg     | The text color of the timer in hex code (without #).       | 111         | 111                 |
-| font   | The font name of the timer.                                | helvetica   | helvetica           |
+| Option | Description                                                      | Example     | Default             |
+| ------ | ---------------------------------------------------------------- | ----------- | ------------------- |
+| date?  | The date of the event in YYYY-MMM-DD format.                     | 2023-Mar-15 | None (optional)     |
+| time   | The time of the event in HH:MM format (24-hour clock).           | 22:30       | Starts 5 mins timer |
+| bg     | The background color of the timer's box in hex code (without #). | eee         | eee                 |
+| fg     | The text color of the timer in hex code (without #).             | 111         | 111                 |
+| font   | The font name of the timer.                                      | helvetica   | helvetica           |
+| addbox | add a box around the timer                                       | 1           | 0 (optional)        |
 
 For example, if you want to display a countdown timer for your birthday on March 15th, 2023 at 10:30 PM with a white background and black text in Arial font, you would use this URL:
 
