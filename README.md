@@ -1,5 +1,8 @@
 # Countdown Timer
 
+<p align="center"><img src="https://user-images.githubusercontent.com/1373867/225465263-da230e4e-de08-4f78-b800-901e49e12dee.png" /></p>
+<p align="center"><sup>https://timer-blue.vercel.app/?date=16-mar-23&time=00:55&addbox=1&bg=ff0000aa&font=monospace</sup></p>
+
 This project is for displaying a countdown timer that can be used in overlays. You can customize the date, time, background color, text color and font of the timer.
 
 ## Usage
