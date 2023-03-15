@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { CountdownTimer } from '../lib/CountdownTimer'
+  import { CountdownTimer } from '$lib/CountdownTimer'
 
   let counter: string = 'counting...'
+  let timer: CountdownTimer
 
   onMount(() => {
     const now = new Date().toISOString().split('T')
@@ -20,7 +21,10 @@
     root.style.setProperty('--fg-color', `#${fg}`)
     root.style.setProperty('--text-font', font)
 
-    const timer = new CountdownTimer(new Date(`${date} ${time}`))
+    // Start with 5 mins timer if the user didn't provide a time
+    if (!time)
+      timer = new CountdownTimer(new Date(new Date().getTime() + 5 * 60 * 1000))
+    else timer = new CountdownTimer(new Date(`${date} ${time}`))
 
     timer.addListener((timeLeft) => {
       // Convert milliseconds into days, hours, minutes and seconds
