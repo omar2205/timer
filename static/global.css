@@ -1,0 +1,11 @@
+:root {
+  --bg-color: #eee;
+  --fg-color: #111;
+  --text-font: 'helvetica';
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--text-font);
+}
